@@ -10,18 +10,19 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="tb_game")
+@Table(name = "tb_game")
 public class Game {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	private String title;
 	
 	@Column(name = "game_year")
 	private Integer year;
 	private String genre;
-	private String plataform;
+	private String platforms;
+	private String score;
 	private String imgUrl;
 	private String shortDescriptiong;
 	private String longDescription;
@@ -31,24 +32,25 @@ public class Game {
 	public Game() {
 	}
 
-	public Game(long id, String title, Integer year, String genre, String plataform, String imgUrl,
+	public Game(long id, String title, Integer year, String genre, String platforms, String score, String imgUrl,
 			String shortDescriptiong, String longDescription) {
  
 		this.id = id;
 		this.title = title;
 		this.year = year;
 		this.genre = genre;
-		this.plataform = plataform;
+		this.platforms = platforms;
+		this.score = score;
 		this.imgUrl = imgUrl;
 		this.shortDescriptiong = shortDescriptiong;
 		this.longDescription = longDescription;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -76,12 +78,21 @@ public class Game {
 		this.genre = genre;
 	}
 
-	public String getPlataform() {
-		return plataform;
+	public String getPlatforms() {
+		return platforms;
 	}
 
-	public void setPlataform(String plataform) {
-		this.plataform = plataform;
+	public void setPlatforms(String platforms) {
+		this.platforms = platforms;
+	}
+	
+
+	public String getScore() {
+		return score;
+	}
+
+	public void setScore(String score) {
+		this.score = score;
 	}
 
 	public String getImgUrl() {
